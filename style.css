@@ -1,0 +1,231 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url('./images/1.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.navbar {
+    width: 1200px;
+    height: 75px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    flex-wrap: nowrap;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 25px;
+    font-family: "Arial", sans-serif;
+    padding-left: 20px;
+}
+
+.language-selector {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+}
+
+.language-selector button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.language-selector button:hover {
+    background-color: #555;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+li {
+    margin: 0 20px;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: #a0a0a0;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+.active {
+    color: #ffffff;
+}
+
+.content {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    color: #fff;
+    position: relative;
+}
+
+.content .par {
+    padding-left: 20px;
+    padding-bottom: 25px;
+    font-family: Arial;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+}
+
+.content h1 {
+    font-family: 'Times New Roman';
+    font-size: 50px;
+    padding-left: 20px;
+    margin-top: 9%;
+    letter-spacing: 2px;
+}
+
+.content span {
+    color: #ff7200;
+    font-size: 60px;
+}
+
+.auth-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.authBtn {
+    background-color: #555;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.authBtn:hover {
+    background-color: #777;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.auth-content {
+    text-decoration: none;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-top: 1.5px;
+}
+
+.auth-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.auth-content a:hover {
+    background-color: #f1f1f1;
+    text-decoration: none;
+}
+
+.auth-dropdown:hover .auth-content {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+    animation: zoomIn 0.3s ease;
+}
+
+.auth-content {
+    text-decoration: none;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.auth-dropdown:not(:hover) .auth-content {
+    animation: zoomOut 0.3s ease forwards;
+    opacity: 0;
+    transform: scale(0.9);
+    display: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, display 0.3s ease;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+}
